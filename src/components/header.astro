@@ -1,0 +1,33 @@
+---
+interface Links {
+    href: string;
+    label: string;
+}
+
+const links: Links[] = [
+    {
+        href: "/about",
+        label: "about",
+    },
+    {
+        href: "/blog",
+        label: "blog",
+    },
+    {
+        href: "/works",
+        label: "works",
+    },
+];
+---
+
+<header class="fixed top-0 left-0 p-4 py-5">
+    <ul class="flex items-center gap-4">
+        {
+            links.map((link) => (
+                <li class="text-2xl font-bold text-white">
+                    <a href={link.href}>{link.label}</a>
+                </li>
+            ))
+        }
+    </ul>
+</header>
