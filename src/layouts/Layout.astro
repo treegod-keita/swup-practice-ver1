@@ -1,6 +1,12 @@
 ---
 import "../styles/global.css";
 import Header from "@/components/header.astro";
+
+interface Props {
+    className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,13 +19,17 @@ import Header from "@/components/header.astro";
         <meta name="generator" content={Astro.generator} />
         <title>Astro Basics</title>
     </head>
-    <body class="bg-black">
+    <body class={className}>
         <Header />
-        <main>
+        <main id="swup">
             <slot />
         </main>
     </body>
 </html>
+
+<script>
+    import "@/scripts/swup";
+</script>
 
 <style>
     html,
