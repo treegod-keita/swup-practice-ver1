@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+@theme {
+    /* 色の初期化 */
+    /* --color-*: initial; */
+
+    --color-white: #fff;
+    --color-black: #111;
+
+    --font-family-sans: "Inter", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+    touch-action: manipulation;
+
+    font-size: clamp(calc(16px / 1366 * 834), calc((16 / 1366) * 100vw), calc(16px / 1366 * 1536));
+
+    /* tablet, smartphone */
+    @media (max-width: 768px) {
+        /* 16px(1rem) / 375px(アートボードサイズ) * 100 */
+        font-size: clamp(1px, calc((16 / 375) * 100vw), calc(16px / 375 * 600));
+    }
+}
+
+@layer base {
+    body {
+        @apply font-family-sans text-black;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+        @apply antialiased;
+        font-feature-settings: "palt" 1;
+    }
+
+    a {
+        @apply text-current no-underline;
+    }
+
+    img {
+        @apply h-auto w-full object-cover;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+}
