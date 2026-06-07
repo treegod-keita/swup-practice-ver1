@@ -21,7 +21,7 @@ const { className } = Astro.props;
     </head>
     <body class={className}>
         <Header />
-        <main id="swup">
+        <main id="swup" class="h-screen w-full overflow-x-hidden overflow-y-scroll">
             <slot />
         </main>
     </body>
