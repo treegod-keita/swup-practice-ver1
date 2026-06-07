@@ -1,11 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Blogs from "@/data/blog";
 ---
 
 <Layout>
-    <div class="flex h-screen w-full items-center justify-center bg-purple-600">
-        <h1 class="text-center text-4xl leading-loose font-bold text-white">
+    <div class="flex w-full flex-col items-center justify-center gap-y-30 bg-gray-900 py-30">
+        <h1 class="text-center text-7xl leading-normal font-bold text-white">
             このサイトは<br />Blogページです。
         </h1>
+        <ul class="mx-auto flex w-300 flex-col text-gray-200">
+            {
+                Blogs.map((blog) => (
+                    <li class="w-full">
+                        <a
+                            href=""
+                            class="flex flex-col gap-y-2 border-y border-y-gray-400 px-8 py-10"
+                        >
+                            <span class="flex items-center gap-x-3">
+                                <span>{blog.day}</span>
+                                <span class="rounded-xl bg-gray-500 px-2 py-1">{blog.type}</span>
+                            </span>
+                            <span class="text-3xl">{blog.title}</span>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
     </div>
 </Layout>

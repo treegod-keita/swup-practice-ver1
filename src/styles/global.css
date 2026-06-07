@@ -13,7 +13,7 @@
 html {
     touch-action: manipulation;
 
-    font-size: clamp(calc(16px / 1366 * 834), calc((16 / 1366) * 100vw), calc(16px / 1366 * 1536));
+    font-size: clamp(calc(16px / 1440 * 834), calc((16 / 1440) * 100vw), calc(16px / 1440 * 1536));
 
     /* tablet, smartphone */
     @media (max-width: 768px) {
