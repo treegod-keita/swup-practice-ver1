@@ -1,11 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import mv from "@/assets/home/back-image-pc.jpg";
 ---
 
 <Layout className="">
-    <div class="flex h-screen w-full items-center justify-center bg-red-600">
+    <div class="flex w-full flex-col items-center justify-center gap-y-30 bg-gray-800 py-50">
         <h1 class="text-center text-4xl leading-loose font-bold text-white">
             このサイトは<br />ページネーションを実装練習のためのサイトです。
         </h1>
+        <div class="mx-auto w-300">
+            <Image src={mv} alt="" width={mv.width} height={mv.height} format="webp" />
+        </div>
     </div>
 </Layout>
